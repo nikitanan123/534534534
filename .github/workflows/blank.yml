@@ -23,7 +23,7 @@ jobs:
            password: ${{ secrets.GITHUB_TOKEN }}
    
       - run: docker build -t ghcr.io/nikitanan123/python-app:latest .
-      - run: docker push -t ghcr.io/nikitanan123/python-app:latest
+      - run: docker push ghcr.io/nikitanan123/python-app:latest
 
 
   deploy: 
@@ -38,8 +38,8 @@ jobs:
               username: ${{ github.actor }}
               password: ${{ secrets.GITHUB_TOKEN }}
 
-          - run: docker pull -t ghcr.io/nikitanan123/python-app:latest
-          - run: docker run -t ghcr.io/nikitanan123/python-app:latest    
+          - run: docker pull ghcr.io/nikitanan123/python-app:latest
+          - run: docker run ghcr.io/nikitanan123/python-app:latest    
 
 
 
